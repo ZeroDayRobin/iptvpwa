@@ -56,17 +56,39 @@ export class XtreamUrlService {
     >();
 
     /**
+     * In PWA mode an https iptvpwa.vercel.app page cannot load `http://`
+     * media (Mixed Content) and cannot reach hosts that serve only HTTP.
+     * Route http URLs through the same-origin /api/stream Vercel Function
+     * so the browser stays happy. Electron has no such restriction.
+     */
+    private wrapForProxyIfNeeded(url: string): string {
+        if (!url) return url;
+        if (typeof window === 'undefined') return url;
+        if (window.electron) return url;
+        if (!url.toLowerCase().startsWith('http://')) return url;
+        return `/api/stream?url=${encodeURIComponent(url)}`;
+    }
+
+    /**
      * Construct live stream URL
      * Format: {serverUrl}/live/{username}/{password}/{streamId}.{format}
+     *
+     * In PWA mode `.ts` (a single endless MPEG-TS) is upgraded to `.m3u8`
+     * so the proxy can rewrite per-segment URLs and stay within the
+     * Vercel Function 30s timeout per invocation. `.ts` would require
+     * a single response that lasts hours.
      */
     constructLiveUrl(
         credentials: XtreamCredentials,
         xtreamId: number,
         format?: string
     ): string {
-        const streamFormat =
-            format ?? this.settingsStore.streamFormat() ?? 'ts';
-        return `${credentials.serverUrl}/live/${credentials.username}/${credentials.password}/${xtreamId}.${streamFormat}`;
+        const isPwa =
+            typeof window !== 'undefined' && !window.electron;
+        const userFormat = format ?? this.settingsStore.streamFormat();
+        const streamFormat = isPwa ? 'm3u8' : (userFormat ?? 'ts');
+        const url = `${credentials.serverUrl}/live/${credentials.username}/${credentials.password}/${xtreamId}.${streamFormat}`;
+        return this.wrapForProxyIfNeeded(url);
     }
 
     /**
@@ -83,7 +105,8 @@ export class XtreamUrlService {
         if (!streamId || !extension) {
             return '';
         }
-        return `${credentials.serverUrl}/movie/${credentials.username}/${credentials.password}/${streamId}.${extension}`;
+        const url = `${credentials.serverUrl}/movie/${credentials.username}/${credentials.password}/${streamId}.${extension}`;
+        return this.wrapForProxyIfNeeded(url);
     }
 
     /**
@@ -94,7 +117,8 @@ export class XtreamUrlService {
         credentials: XtreamCredentials,
         episode: XtreamSerieEpisode
     ): string {
-        return `${credentials.serverUrl}/series/${credentials.username}/${credentials.password}/${episode.id}.${episode.container_extension}`;
+        const url = `${credentials.serverUrl}/series/${credentials.username}/${credentials.password}/${episode.id}.${episode.container_extension}`;
+        return this.wrapForProxyIfNeeded(url);
     }
 
     constructCatchupUrl(

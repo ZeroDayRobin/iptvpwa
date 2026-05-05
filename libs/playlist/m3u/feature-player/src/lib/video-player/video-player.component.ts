@@ -183,7 +183,9 @@ export class VideoPlayerComponent implements OnInit, OnDestroy {
         }
 
         return {
-            streamUrl: `${playbackTarget.url}${playbackTarget.epgParams ?? ''}`,
+            streamUrl: this.wrapForProxyIfNeeded(
+                `${playbackTarget.url}${playbackTarget.epgParams ?? ''}`
+            ),
             title:
                 activeChannel.name?.trim() ||
                 activeChannel.tvg?.name ||
@@ -195,6 +197,20 @@ export class VideoPlayerComponent implements OnInit, OnDestroy {
             origin: playbackTarget.http.origin || undefined,
         };
     });
+
+    /**
+     * Same Mixed-Content workaround as XtreamUrlService.wrapForProxyIfNeeded
+     * — if we're in a browser PWA loading an http:// stream, route through
+     * the same-origin /api/stream Vercel Function so the HTTPS page can
+     * actually fetch it. Electron and https targets pass through unchanged.
+     */
+    private wrapForProxyIfNeeded(url: string): string {
+        if (!url) return url;
+        if (typeof window === 'undefined') return url;
+        if (window.electron) return url;
+        if (!url.toLowerCase().startsWith('http://')) return url;
+        return `/api/stream?url=${encodeURIComponent(url)}`;
+    }
     readonly sidebarStorageKey = computed(() =>
         this.activeView() === 'groups'
             ? M3U_GROUPS_SIDEBAR_STORAGE_KEY
