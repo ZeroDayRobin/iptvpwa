@@ -1,12 +1,11 @@
 {
-    "name": "iptvnator",
+    "name": "iptvpwa",
     "version": "0.21.0",
     "license": "MIT",
-    "description": "IPTV player application.",
-    "homepage": "https://github.com/4gray/iptvnator",
+    "description": "IPTVpwa — PWA-focused fork of IPTVnator (https://github.com/4gray/iptvnator) by 4gray. Original code MIT-licensed; see LICENSE.md.",
+    "homepage": "https://github.com/ZeroDayRobin/iptvpwa",
     "author": {
-        "name": "4gray",
-        "email": "fourgray@proton.me"
+        "name": "ZeroDayRobin"
     },
     "keywords": [
         "angular",
