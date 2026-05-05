@@ -68,12 +68,45 @@ export class PwaService extends DataService {
         XtreamCodeActions.GetSimpleDateTable,
     ]);
 
-    /** Proxy URL to avoid CORS issues */
-    corsProxyUrl = AppConfig.BACKEND_URL;
+    /**
+     * Backend base URL for the /parse, /xtream and /stalker proxy
+     * endpoints (Vercel Functions in this fork).
+     *
+     * - Browser PWA: empty string -> relative URL -> same-origin call to
+     *   iptvpwa.vercel.app, which is where the Functions live.
+     * - Capacitor (Android): the app is served from capacitor://localhost
+     *   so a relative URL would resolve to capacitor://localhost/xtream
+     *   which doesn't exist. Override to the absolute Vercel URL so the
+     *   XHR is cross-origin to the *real* backend. (Stream URLs already
+     *   bypass this proxy entirely in Capacitor mode via
+     *   xtream-url.service.wrapForProxyIfNeeded.)
+     * - Electron: doesn't use PwaService at all (DataFactory picks
+     *   ElectronService when window.electron is truthy).
+     */
+    corsProxyUrl = this.resolveCorsProxyUrl();
 
     constructor() {
         super();
-        console.log('PWA service initialized...');
+        console.log(
+            'PWA service initialized, corsProxyUrl:',
+            this.corsProxyUrl || '<same-origin>'
+        );
+    }
+
+    private resolveCorsProxyUrl(): string {
+        if (typeof window === 'undefined') return AppConfig.BACKEND_URL;
+        const cap = (
+            window as unknown as {
+                Capacitor?: { isNativePlatform?: () => boolean };
+            }
+        ).Capacitor;
+        if (cap?.isNativePlatform?.()) {
+            // Same Vercel deployment that hosts the PWA web bundle and
+            // the api/* Functions. Hardcoded because the Capacitor APK
+            // ships with no environment override hooks at runtime.
+            return 'https://iptvpwa.vercel.app';
+        }
+        return AppConfig.BACKEND_URL;
     }
 
     /** Uses service worker mechanism to check for available application updates */
