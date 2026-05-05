@@ -349,7 +349,7 @@ export class PwaXtreamDataSource implements IXtreamDataSource {
         // reads `xtream_id` and silently builds `.../undefined.m3u8` URLs
         // without this normalisation.
         const content = (
-            apiContent as Array<Record<string, unknown> & {
+            apiContent as unknown as Array<Record<string, unknown> & {
                 xtream_id?: number;
                 stream_id?: number;
                 series_id?: number;
