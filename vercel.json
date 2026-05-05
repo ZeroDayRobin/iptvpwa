@@ -1,0 +1,30 @@
+{
+    "$schema": "https://openapi.vercel.sh/vercel.json",
+    "buildCommand": "corepack enable && pnpm install --frozen-lockfile && pnpm build:frontend:pwa",
+    "outputDirectory": "dist/apps/web",
+    "framework": null,
+    "rewrites": [
+        { "source": "/(.*)", "destination": "/index.html" }
+    ],
+    "headers": [
+        {
+            "source": "/index.html",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "no-cache, no-store, must-revalidate"
+                }
+            ]
+        },
+        {
+            "source": "/manifest.webmanifest",
+            "headers": [
+                {
+                    "key": "Content-Type",
+                    "value": "application/manifest+json"
+                },
+                { "key": "Cache-Control", "value": "public, max-age=3600" }
+            ]
+        }
+    ]
+}
