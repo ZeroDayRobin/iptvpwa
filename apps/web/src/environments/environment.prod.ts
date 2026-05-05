@@ -4,5 +4,8 @@ export const AppConfig = {
     production: true,
     environment: 'PROD',
     version: packageJson.version,
-    BACKEND_URL: 'https://iptvnator-playlist-parser-api.vercel.app',
+    // Empty string => same-origin: PwaService calls /parse, /xtream, /stalker
+    // on the iptvpwa.vercel.app deployment itself, where Vercel rewrites
+    // route them to the api/*.ts serverless Functions in this repo.
+    BACKEND_URL: '',
 };

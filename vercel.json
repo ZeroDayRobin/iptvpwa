@@ -1,9 +1,12 @@
 {
     "$schema": "https://openapi.vercel.sh/vercel.json",
-    "buildCommand": "corepack enable && pnpm install --frozen-lockfile && pnpm build:frontend:pwa",
+    "buildCommand": "corepack enable && pnpm install --no-frozen-lockfile && pnpm build:frontend:pwa",
     "outputDirectory": "dist/apps/web",
     "framework": null,
     "rewrites": [
+        { "source": "/parse", "destination": "/api/parse" },
+        { "source": "/xtream", "destination": "/api/xtream" },
+        { "source": "/stalker", "destination": "/api/stalker" },
         { "source": "/(.*)", "destination": "/index.html" }
     ],
     "headers": [
