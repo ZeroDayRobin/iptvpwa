@@ -339,7 +339,33 @@ export class PwaXtreamDataSource implements IXtreamDataSource {
         }
 
         // Fetch from API
-        const content = await this.apiService.getStreams(credentials, type);
+        const apiContent = await this.apiService.getStreams(credentials, type);
+
+        // The Electron data source returns DB-row-shaped items where the
+        // identifier lives on `xtream_id`. PWA reads the raw API response
+        // where it's `stream_id` (live/movie) or `series_id` (series).
+        // Downstream code (xtream-url.service constructLiveUrl/constructVodUrl/
+        // constructEpisodeUrl, favorites lookups, recently-viewed mapping)
+        // reads `xtream_id` and silently builds `.../undefined.m3u8` URLs
+        // without this normalisation.
+        const content = (
+            apiContent as Array<Record<string, unknown> & {
+                xtream_id?: number;
+                stream_id?: number;
+                series_id?: number;
+                id?: number;
+            }>
+        ).map((item) => ({
+            ...item,
+            xtream_id:
+                item.xtream_id ??
+                item.stream_id ??
+                item.series_id ??
+                item.id,
+        })) as unknown as
+            | XtreamLiveStream[]
+            | XtreamVodStream[]
+            | XtreamSerieItem[];
 
         // Report total and progress (PWA doesn't have incremental save, so report all at once)
         if (onTotal) {
