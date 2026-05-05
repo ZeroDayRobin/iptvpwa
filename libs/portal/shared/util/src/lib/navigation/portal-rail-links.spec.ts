@@ -32,16 +32,26 @@ describe('buildPortalRailLinks', () => {
             workspace: true,
         });
 
-        expect(links.primary).toEqual([
-            {
-                icon: 'movie',
-                tooltip: 'Xtream library (this playlist)',
-                path: ['/workspace', 'xtreams', 'xtream-web'],
-                exact: true,
-                section: 'library',
-            },
+        // Web/PWA used to be gimped to a single "library" tile — that hid
+        // /live and /series even though both routes work. Now PWA gets the
+        // same per-type rail Electron has, minus the Electron-only Downloads
+        // tile in secondary.
+        expect(links.primary.map((link) => link.section)).toEqual([
+            'vod',
+            'live',
+            'series',
         ]);
-        expect(links.secondary).toEqual([]);
+        expect(links.secondary.map((link) => link.section)).toEqual([
+            'recently-added',
+            'search',
+        ]);
+        expect(links.primary[1]?.tooltip).toBe('Live TV (this playlist)');
+        expect(links.primary[1]?.path).toEqual([
+            '/workspace',
+            'xtreams',
+            'xtream-web',
+            'live',
+        ]);
     });
 
     it('builds Stalker links with scoped tooltip labels', () => {
