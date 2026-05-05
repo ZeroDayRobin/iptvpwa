@@ -1,0 +1,107 @@
+name: Android APK
+
+# Build the IPTVpwa Android shell from the same Angular bundle that ships
+# to Vercel. APK on every push to master (artifact only) and on every
+# `v*-android` tag (artifact + GitHub Release attachment).
+#
+# Workflow is autonomous — no Capacitor/Android-SDK setup needed on the
+# dev box. The runner regenerates the android/ folder each run from
+# capacitor.config.ts so a clean checkout is always reproducible. The
+# APK is debug-signed (sideload-friendly, no keystore secret needed for
+# first ship); switch to a release build with a stored keystore later
+# when ready for Play Store distribution.
+
+on:
+    push:
+        branches: [master]
+        tags: ['v*-android']
+        paths-ignore:
+            - 'docs/**'
+            - 'apps/website/**'
+            - '*.md'
+    workflow_dispatch:
+
+permissions:
+    contents: write
+
+jobs:
+    build-apk:
+        name: Build debug APK
+        runs-on: ubuntu-latest
+        timeout-minutes: 30
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '20'
+
+            - name: Setup Java 21
+              uses: actions/setup-java@v4
+              with:
+                  distribution: 'temurin'
+                  java-version: '21'
+
+            - name: Setup Android SDK
+              uses: android-actions/setup-android@v3
+              with:
+                  packages: 'platforms;android-35 build-tools;35.0.0'
+
+            - name: Install dependencies (pnpm via Corepack)
+              run: |
+                  corepack enable
+                  pnpm install --no-frozen-lockfile
+
+            - name: Build PWA bundle
+              run: pnpm build:frontend:pwa
+
+            - name: Add Android platform (idempotent)
+              run: |
+                  if [ ! -d "android" ]; then
+                      npx cap add android
+                  fi
+
+            - name: Sync web bundle into Android shell
+              run: npx cap sync android
+
+            - name: Build debug APK
+              working-directory: android
+              run: ./gradlew assembleDebug --no-daemon --stacktrace
+
+            - name: Stage APK artifact
+              run: |
+                  mkdir -p artifacts
+                  cp android/app/build/outputs/apk/debug/app-debug.apk \
+                     artifacts/iptvpwa-android-${{ github.sha }}.apk
+
+            - name: Upload APK artifact (CI build)
+              uses: actions/upload-artifact@v4
+              with:
+                  name: iptvpwa-android-debug-apk
+                  path: artifacts/iptvpwa-android-${{ github.sha }}.apk
+                  retention-days: 30
+
+            - name: Attach APK to GitHub Release (on tag)
+              if: startsWith(github.ref, 'refs/tags/')
+              uses: softprops/action-gh-release@v2
+              with:
+                  files: artifacts/iptvpwa-android-${{ github.sha }}.apk
+                  generate_release_notes: true
+                  body: |
+                      ## IPTVpwa Android (debug build)
+
+                      Sideloadable APK that wraps the same Angular bundle
+                      shipped to https://iptvpwa.vercel.app. Native shell,
+                      so HTTP-only IPTV streams play directly without
+                      going through the Vercel /stream proxy.
+
+                      **Install (Android):**
+                      1. Download `iptvpwa-android-*.apk`
+                      2. On your phone: Settings → Security → enable
+                         "Install unknown apps" for your browser
+                      3. Open the APK file → Install
+                      4. First launch will warn this is debug-signed —
+                         tap "Install anyway"
+
+                      Built from commit ${{ github.sha }}.

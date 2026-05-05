@@ -208,6 +208,13 @@ export class VideoPlayerComponent implements OnInit, OnDestroy {
         if (!url) return url;
         if (typeof window === 'undefined') return url;
         if (window.electron) return url;
+        // Capacitor (Android) shell — direct network access, skip proxy.
+        const cap = (
+            window as unknown as {
+                Capacitor?: { isNativePlatform?: () => boolean };
+            }
+        ).Capacitor;
+        if (cap?.isNativePlatform?.()) return url;
         if (!url.toLowerCase().startsWith('http://')) return url;
         // See xtream-url.service.ts wrapForProxyIfNeeded — path-based form
         // preserves the `.m3u8`/`.ts`/`.mp4` suffix in the URL pathname so

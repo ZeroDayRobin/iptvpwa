@@ -44,6 +44,22 @@ If you find this useful, please consider supporting the upstream author:
 
 For screenshots and a full upstream feature list, see the [original README](https://github.com/4gray/iptvnator#readme).
 
+## Available builds
+
+| Surface | URL / artifact | Notes |
+|---|---|---|
+| **PWA (browser)** | https://iptvpwa.vercel.app | Mobile, desktop, smart-TV browsers. HTTP-only IPTV streams transit a Vercel `/stream` proxy (bandwidth-limited). |
+| **Android APK** | [latest GitHub Release](https://github.com/ZeroDayRobin/iptvpwa/releases) | Capacitor wrapper, native Android shell. **HTTP streams play directly** (no proxy hop, no Vercel bandwidth). |
+
+### Installing the Android APK
+
+1. Download `iptvpwa-android-*.apk` from the [Releases page](https://github.com/ZeroDayRobin/iptvpwa/releases).
+2. On your phone: enable "Install unknown apps" for your browser (Settings → Apps → your browser → Advanced → Install unknown apps).
+3. Open the APK file → Install. The first install warns this is debug-signed — tap "Install anyway".
+4. Launch IPTVpwa, add your Xtream/M3U/Stalker source the same way you would in the PWA.
+
+The Android shell uses the same Angular bundle as the PWA — every fix and feature lands in both with one commit. The only behavioural difference is that the native shell skips the `/stream` proxy and connects to your IPTV provider directly, which removes the Vercel bandwidth cost and avoids datacenter-IP rate-limiting that some providers apply.
+
 ## Build & Deploy (PWA target)
 
 Requirements: Node.js with pnpm via Corepack.
@@ -68,6 +84,32 @@ pnpm serve:frontend:pwa     # http://localhost:4200
 - Node Version: 20.x or 22.x
 
 The PWA is fully client-side (storage = IndexedDB), so no environment variables, secrets, or backend services are required.
+
+## Build & Deploy (Android APK target)
+
+The Android shell is a thin Capacitor wrapper around the same `dist/apps/web` Angular bundle the PWA ships. Configuration lives in [`capacitor.config.ts`](./capacitor.config.ts).
+
+**CI build (recommended):** push a `v*-android` tag, GitHub Actions builds the debug APK and attaches it to a GitHub Release automatically. The workflow lives in [`.github/workflows/android-apk.yml`](./.github/workflows/android-apk.yml).
+
+```bash
+git tag v0.1.0-android
+git push origin v0.1.0-android
+# → APK appears under https://github.com/ZeroDayRobin/iptvpwa/releases
+```
+
+**Local build (requires Android Studio + JDK 21 + Android SDK 35):**
+
+```bash
+corepack enable
+pnpm install
+pnpm build:frontend:pwa     # build the web bundle Capacitor will package
+npx cap add android         # one-time, generates the android/ folder
+npx cap sync android        # copy bundle into android/app/src/main/assets/public
+cd android && ./gradlew assembleDebug
+# → android/app/build/outputs/apk/debug/app-debug.apk
+```
+
+To switch to a release-signed APK suitable for the Play Store, generate a keystore, store its credentials as GitHub secrets, and replace `assembleDebug` with `assembleRelease` in the workflow. See the upstream Capacitor docs for details.
 
 ## Trademark & Naming
 

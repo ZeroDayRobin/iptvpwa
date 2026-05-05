@@ -59,12 +59,26 @@ export class XtreamUrlService {
      * In PWA mode an https iptvpwa.vercel.app page cannot load `http://`
      * media (Mixed Content) and cannot reach hosts that serve only HTTP.
      * Route http URLs through the same-origin /api/stream Vercel Function
-     * so the browser stays happy. Electron has no such restriction.
+     * so the browser stays happy.
+     *
+     * Bypassed for Electron and Capacitor (Android) shells, which both
+     * load the app from a non-https origin where Mixed Content rules
+     * don't apply, so they hit the IPTV provider directly with no proxy
+     * hop and no Vercel bandwidth cost.
      */
     private wrapForProxyIfNeeded(url: string): string {
         if (!url) return url;
         if (typeof window === 'undefined') return url;
         if (window.electron) return url;
+        // Capacitor injects a global at runtime when the app is running in
+        // its native Android/iOS shell; isNativePlatform() is true only on
+        // device, not in `npx cap serve` web preview.
+        const cap = (
+            window as unknown as {
+                Capacitor?: { isNativePlatform?: () => boolean };
+            }
+        ).Capacitor;
+        if (cap?.isNativePlatform?.()) return url;
         if (!url.toLowerCase().startsWith('http://')) return url;
         // Path-based proxy URL (rewritten to /api/stream?url=$1 in
         // vercel.json) so the file extension stays visible in the
