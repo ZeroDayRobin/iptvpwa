@@ -6,7 +6,7 @@
     "SHOW_LESS": "Minder",
     "PLAYLISTS": "Afspeellijst",
     "HOME": {
-        "TITLE": "IPTVnator",
+        "TITLE": "IPTVpwa",
         "SUBTITLE": "Selecteer een afspeellijst of voeg een nieuwe lijst toe",
         "TABS": {
             "RECENTLY_ADDED": "Recent toegevoegde afspeellijst",
@@ -19,7 +19,7 @@
         "PLAYLISTS": {
             "NO_PLAYLISTS": "Geen afspeellijst toegevoegd",
             "ADD_FIRST": "Voeg je afspeellijst toe",
-            "WELCOME_TITLE": "Welkom bij IPTVnator",
+            "WELCOME_TITLE": "Welkom bij IPTVpwa",
             "WELCOME_DESCRIPTION": "Begin je streamingavontuur door je eerste afspeellijst toe te voegen. Maak verbinding met je favoriete IPTV-dienst en geniet van live tv, films en series.",
             "ADD_YOUR_FIRST": "Voeg je eerste afspeellijst toe",
             "FEATURE_M3U": "M3U/M3U8-bestanden",
@@ -218,7 +218,7 @@
         "NAV_ABOUT": "Over",
         "APP_PREFERENCES": "App-voorkeuren",
         "HERO_EYEBROW": "Werkruimte-instellingen",
-        "HERO_TITLE": "Bepaal hoe IPTVnator aanvoelt",
+        "HERO_TITLE": "Bepaal hoe IPTVpwa aanvoelt",
         "HERO_DESCRIPTION": "Stem afspelen, gidsen, externe toegang en gegevensverwerking af op één plek zonder de huidige werkruimtestijl te verliezen.",
         "SUBTITLE": "Wijzig de configuratie van de applicatie",
         "DESCRIPTION": "Pas de instellingen aan en bevestig met de knop 'Wijzigingen opslaan'.",
@@ -270,14 +270,14 @@
         "COVER_SIZE_MEDIUM": "Gemiddeld",
         "COVER_SIZE_LARGE": "Groot",
         "STARTUP_BEHAVIOR": "Opstartweergave",
-        "STARTUP_BEHAVIOR_DESCRIPTION": "Kies of IPTVnator de eerste beschikbare werkruimteweergave opent of je laatste sectieweergave herstelt. Eerste weergave betekent het dashboard wanneer ingeschakeld, anders Bronnen.",
+        "STARTUP_BEHAVIOR_DESCRIPTION": "Kies of IPTVpwa de eerste beschikbare werkruimteweergave opent of je laatste sectieweergave herstelt. Eerste weergave betekent het dashboard wanneer ingeschakeld, anders Bronnen.",
         "STARTUP_BEHAVIOR_FIRST_VIEW": "Eerste beschikbare weergave",
         "STARTUP_BEHAVIOR_RESTORE_LAST_VIEW": "Laatste weergave herstellen",
         "SHOW_CAPTIONS_DESCRIPTION": "Standaard ondertiteling weergeven of verbergen",
         "SHOW_EXTERNAL_PLAYBACK_BAR": "Voettekst 'nu spelend' tonen",
         "SHOW_EXTERNAL_PLAYBACK_BAR_DESCRIPTION": "Houd de statusbalk van de externe speler zichtbaar onderaan de werkruimte op desktop.",
         "VERSION_DESCRIPTION": "Huidige versie van de applicatie",
-        "ABOUT_SUBTITLE": "Versie, projectlinks en manieren om IPTVnator te ondersteunen.",
+        "ABOUT_SUBTITLE": "Versie, projectlinks en manieren om IPTVpwa te ondersteunen.",
         "EMBEDDED_MPV_NOTICE_TITLE": "Ingebedde MPV-runtime",
         "EMBEDDED_MPV_NOTICE_DESCRIPTION": "macOS-builds kunnen meegeleverde libmpv- en FFmpeg-bibliotheken bevatten voor de experimentele Embedded MPV-speler. Gebruikers hoeven de MPV-app niet apart te installeren; externe MPV en VLC blijven beschikbaar als terugvalspelers.",
         "COMMUNITY": "Project & community",
@@ -287,10 +287,10 @@
         "LINK_BLOG_DESCRIPTION": "Releaseopmerkingen, tips en projectupdates",
         "LINK_TELEGRAM_DESCRIPTION": "Aankondigingen, community en ondersteuning",
         "SUPPORT_TITLE": "Ondersteun het project",
-        "SUPPORT_DESCRIPTION": "IPTVnator is gratis en open source, gebouwd in de openbaarheid. Als het deel uitmaakt van je dagelijkse routine, helpt een kleine bijdrage het project levend te houden en mee te bepalen wat er komt — bedankt.",
+        "SUPPORT_DESCRIPTION": "IPTVpwa is gratis en open source, gebouwd in de openbaarheid. Als het deel uitmaakt van je dagelijkse routine, helpt een kleine bijdrage het project levend te houden en mee te bepalen wat er komt — bedankt.",
         "SUPPORT_SPONSORS_HINT": "Terugkerend of eenmalig",
         "SUPPORT_KOFI_HINT": "Trakteer me op een koffie",
-        "EPG_NOTE": "Momenteel is EPG alleen beschikbaar in de op Electron gebaseerde versie van IPTVnator.",
+        "EPG_NOTE": "Momenteel is EPG alleen beschikbaar in de op Electron gebaseerde versie van IPTVpwa.",
         "EPG_NOTE_URL_TEXT": "Bekijk het hier",
         "IMPORT_EXPORT_DATA": "Afspeellijsten importeren/exporteren",
         "IMPORT_EXPORT_DATA_DESCRIPTION": "Exporteer of importeer afspeellijsten in JSON-formaat.",
@@ -502,7 +502,7 @@
     "NO": "Nee",
     "MENU": {
         "OPEN": "Open menu",
-        "SUPPORT_ARIA": "Ondersteun IPTVnator op GitHub",
+        "SUPPORT_ARIA": "Ondersteun IPTVpwa op GitHub",
         "SETTINGS": "Instellingen",
         "SETTINGS_ARIA": "Open instellingen",
         "BUG_REPORT": "Meld een bug",
@@ -512,7 +512,7 @@
         "SUPPORT_PROJECT": "Ondersteun het project"
     },
     "ABOUT": {
-        "TITLE": "Over IPTVnator",
+        "TITLE": "Over IPTVpwa",
         "DESCRIPTION": "Cross-platform IPTV-speler met meerdere features zoals ondersteuning voor m3u en m3u8 afspeellijsten, favorieten, TV-gids, TV-archief en meer.",
         "VERSION": "Versie",
         "GITHUB_TOOLTIP": "ITPVnator repository op GitHub",
@@ -770,7 +770,7 @@
             "NOT_YET_SYNCED": "Nog niet gesynchroniseerd"
         },
         "SHELL": {
-            "BRAND_ALT": "IPTVnator",
+            "BRAND_ALT": "IPTVpwa",
             "RAIL_DASHBOARD": "Dashboard",
             "OPEN_DASHBOARD": "Open dashboard",
             "RAIL_SOURCES": "Bronnen",

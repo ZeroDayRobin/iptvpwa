@@ -6,7 +6,7 @@
     "SHOW_LESS": "收起",
     "PLAYLISTS": "播放列表",
     "HOME": {
-        "TITLE": "IPTVnator",
+        "TITLE": "IPTVpwa",
         "SUBTITLE": "选择一个播放列表或者从URL/文件中添加一个新的播放列表",
         "TABS": {
             "RECENTLY_ADDED": "最近添加的播放列表",
@@ -19,7 +19,7 @@
         "PLAYLISTS": {
             "NO_PLAYLISTS": "未添加播放列表",
             "ADD_FIRST": "从其他标签页添加你的第一个播放列表",
-            "WELCOME_TITLE": "欢迎使用 IPTVnator",
+            "WELCOME_TITLE": "欢迎使用 IPTVpwa",
             "WELCOME_DESCRIPTION": "添加您的第一个播放列表，开启流媒体之旅。连接到您喜爱的 IPTV 服务，享受直播、电影和剧集。",
             "ADD_YOUR_FIRST": "添加您的第一个播放列表",
             "FEATURE_M3U": "M3U/M3U8 文件",
@@ -218,7 +218,7 @@
         "NAV_ABOUT": "关于",
         "APP_PREFERENCES": "应用偏好",
         "HERO_EYEBROW": "工作区设置",
-        "HERO_TITLE": "定制 IPTVnator 的使用体验",
+        "HERO_TITLE": "定制 IPTVpwa 的使用体验",
         "HERO_DESCRIPTION": "在同一处调整播放、节目指南、远程访问和数据处理，且不会丢失当前工作区样式。",
         "SUBTITLE": "更改应用程序的配置 ",
         "DESCRIPTION": "请调整以下列表中的选项并使用保存按钮确认",
@@ -270,14 +270,14 @@
         "COVER_SIZE_MEDIUM": "中",
         "COVER_SIZE_LARGE": "大",
         "STARTUP_BEHAVIOR": "启动视图",
-        "STARTUP_BEHAVIOR_DESCRIPTION": "选择 IPTVnator 启动时是打开第一个可用的工作区视图，还是恢复您上次的章节级视图。第一个视图在启用时为仪表盘，否则为「源」。",
+        "STARTUP_BEHAVIOR_DESCRIPTION": "选择 IPTVpwa 启动时是打开第一个可用的工作区视图，还是恢复您上次的章节级视图。第一个视图在启用时为仪表盘，否则为「源」。",
         "STARTUP_BEHAVIOR_FIRST_VIEW": "首个可用视图",
         "STARTUP_BEHAVIOR_RESTORE_LAST_VIEW": "恢复上次视图",
         "SHOW_CAPTIONS_DESCRIPTION": "默认显示或隐藏字幕",
         "SHOW_EXTERNAL_PLAYBACK_BAR": "显示「正在播放」底栏",
         "SHOW_EXTERNAL_PLAYBACK_BAR_DESCRIPTION": "在桌面端工作区底部保持外部播放器状态栏可见。",
         "VERSION_DESCRIPTION": "应用程序的当前版本",
-        "ABOUT_SUBTITLE": "版本、项目链接以及支持 IPTVnator 的方式。",
+        "ABOUT_SUBTITLE": "版本、项目链接以及支持 IPTVpwa 的方式。",
         "EMBEDDED_MPV_NOTICE_TITLE": "嵌入式 MPV 运行时",
         "EMBEDDED_MPV_NOTICE_DESCRIPTION": "macOS 构建版本可包含捆绑的 libmpv 和 FFmpeg 库，用于实验性的嵌入式 MPV 播放器。用户无需单独安装 MPV 应用；外部 MPV 和 VLC 仍可作为备用播放器使用。",
         "COMMUNITY": "项目与社区",
@@ -287,10 +287,10 @@
         "LINK_BLOG_DESCRIPTION": "发布说明、使用技巧及项目动态",
         "LINK_TELEGRAM_DESCRIPTION": "公告、社区与支持",
         "SUPPORT_TITLE": "支持本项目",
-        "SUPPORT_DESCRIPTION": "IPTVnator 是免费且开源的，公开开发。如果它已成为您日常的一部分，您的小额贡献将有助于让项目持续发展并塑造未来 — 感谢您。",
+        "SUPPORT_DESCRIPTION": "IPTVpwa 是免费且开源的，公开开发。如果它已成为您日常的一部分，您的小额贡献将有助于让项目持续发展并塑造未来 — 感谢您。",
         "SUPPORT_SPONSORS_HINT": "定期或一次性",
         "SUPPORT_KOFI_HINT": "请我喝杯咖啡",
-        "EPG_NOTE": "目前 EPG 仅在基于电子的 IPTVnator 版本中可用。",
+        "EPG_NOTE": "目前 EPG 仅在基于电子的 IPTVpwa 版本中可用。",
         "EPG_NOTE_URL_TEXT": "在这里检查一下",
         "IMPORT_EXPORT_DATA": "导入/导出播放列表",
         "IMPORT_EXPORT_DATA_DESCRIPTION": "以应用程序中使用的 JSON 格式导出或导入播放列表。",
@@ -502,7 +502,7 @@
     "NO": "否",
     "MENU": {
         "OPEN": "打开菜单",
-        "SUPPORT_ARIA": "在 GitHub 上支持 IPTVnator",
+        "SUPPORT_ARIA": "在 GitHub 上支持 IPTVpwa",
         "SETTINGS": "设置",
         "SETTINGS_ARIA": "打开设置",
         "BUG_REPORT": "问题反馈",
@@ -512,10 +512,10 @@
         "SUPPORT_PROJECT": "支持项目"
     },
     "ABOUT": {
-        "TITLE": "关于 IPTVnator",
+        "TITLE": "关于 IPTVpwa",
         "DESCRIPTION": "跨平台 IPTV 播放器应用，支持多种功能，例如 m3u 和 m3u8 播放列表、收藏、电视节目指南、电视归档/Catchup 等。",
         "VERSION": "版本",
-        "GITHUB_TOOLTIP": "GitHub 上的 IPTVnator 仓库",
+        "GITHUB_TOOLTIP": "GitHub 上的 IPTVpwa 仓库",
         "BUY_ME_A_COFFEE_TOOLTIP": "Buy me a coffee",
         "TWITTER_TOOLTIP": "分享到Twitter"
     },
@@ -770,7 +770,7 @@
             "NOT_YET_SYNCED": "尚未同步"
         },
         "SHELL": {
-            "BRAND_ALT": "IPTVnator",
+            "BRAND_ALT": "IPTVpwa",
             "RAIL_DASHBOARD": "仪表盘",
             "OPEN_DASHBOARD": "打开仪表盘",
             "RAIL_SOURCES": "源",

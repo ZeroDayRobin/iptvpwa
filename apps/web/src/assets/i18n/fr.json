@@ -6,7 +6,7 @@
     "SHOW_LESS": "Moins",
     "PLAYLISTS": "Listes de lecture",
     "HOME": {
-        "TITLE": "IPTVnator",
+        "TITLE": "IPTVpwa",
         "SUBTITLE": "Choisissez une liste de lecture, ou ajoutez en une nouvelle via un transfert de fichier ou via une URL",
         "TABS": {
             "RECENTLY_ADDED": "Récemment ajoutés",
@@ -19,7 +19,7 @@
         "PLAYLISTS": {
             "NO_PLAYLISTS": "Aucune liste de lecture n'a été ajoutée",
             "ADD_FIRST": "Veuillez ajouter votre première liste de lecture depuis un autre onglet",
-            "WELCOME_TITLE": "Bienvenue sur IPTVnator",
+            "WELCOME_TITLE": "Bienvenue sur IPTVpwa",
             "WELCOME_DESCRIPTION": "Commencez votre voyage de streaming en ajoutant votre première liste de lecture. Connectez-vous à votre service IPTV préféré et profitez de la télévision en direct, des films et des séries.",
             "ADD_YOUR_FIRST": "Ajouter votre première liste",
             "FEATURE_M3U": "Fichiers M3U/M3U8",
@@ -218,7 +218,7 @@
         "NAV_ABOUT": "À propos",
         "APP_PREFERENCES": "Préférences de l'application",
         "HERO_EYEBROW": "Paramètres de l'espace de travail",
-        "HERO_TITLE": "Façonnez l'expérience IPTVnator",
+        "HERO_TITLE": "Façonnez l'expérience IPTVpwa",
         "HERO_DESCRIPTION": "Réglez la lecture, les guides, l'accès distant et la gestion des données depuis un seul endroit, sans perdre le style actuel de l'espace de travail.",
         "SUBTITLE": "Modifiez la configuration de l'application",
         "DESCRIPTION": "Changez les options de la liste ci-dessous et enregistrez vos modifications.",
@@ -270,14 +270,14 @@
         "COVER_SIZE_MEDIUM": "Moyenne",
         "COVER_SIZE_LARGE": "Grande",
         "STARTUP_BEHAVIOR": "Vue de démarrage",
-        "STARTUP_BEHAVIOR_DESCRIPTION": "Choisissez si IPTVnator ouvre la première vue disponible de l'espace de travail ou restaure votre dernière vue de section. Première vue signifie Tableau de bord lorsqu'il est activé, sinon Sources.",
+        "STARTUP_BEHAVIOR_DESCRIPTION": "Choisissez si IPTVpwa ouvre la première vue disponible de l'espace de travail ou restaure votre dernière vue de section. Première vue signifie Tableau de bord lorsqu'il est activé, sinon Sources.",
         "STARTUP_BEHAVIOR_FIRST_VIEW": "Première vue disponible",
         "STARTUP_BEHAVIOR_RESTORE_LAST_VIEW": "Restaurer la dernière vue",
         "SHOW_CAPTIONS_DESCRIPTION": "Afficher ou masquer les sous-titres par défaut",
         "SHOW_EXTERNAL_PLAYBACK_BAR": "Afficher le pied de page de lecture en cours",
         "SHOW_EXTERNAL_PLAYBACK_BAR_DESCRIPTION": "Garde la barre d'état du lecteur externe visible en bas de l'espace de travail sur ordinateur.",
         "VERSION_DESCRIPTION": "Version actuelle de l'application",
-        "ABOUT_SUBTITLE": "Version, liens du projet et façons de soutenir IPTVnator.",
+        "ABOUT_SUBTITLE": "Version, liens du projet et façons de soutenir IPTVpwa.",
         "EMBEDDED_MPV_NOTICE_TITLE": "Runtime MPV intégré",
         "EMBEDDED_MPV_NOTICE_DESCRIPTION": "Les versions macOS peuvent inclure les bibliothèques libmpv et FFmpeg empaquetées pour le lecteur MPV intégré expérimental. Les utilisateurs n'ont pas besoin d'installer l'application MPV séparément ; les lecteurs externes MPV et VLC restent disponibles comme lecteurs de secours.",
         "COMMUNITY": "Projet et communauté",
@@ -287,10 +287,10 @@
         "LINK_BLOG_DESCRIPTION": "Notes de version, astuces et actualités du projet",
         "LINK_TELEGRAM_DESCRIPTION": "Annonces, communauté et support",
         "SUPPORT_TITLE": "Soutenir le projet",
-        "SUPPORT_DESCRIPTION": "IPTVnator est libre et open source, développé en toute transparence. S'il fait partie de votre quotidien, une petite contribution aide à maintenir le projet en vie et à façonner la suite — merci.",
+        "SUPPORT_DESCRIPTION": "IPTVpwa est libre et open source, développé en toute transparence. S'il fait partie de votre quotidien, une petite contribution aide à maintenir le projet en vie et à façonner la suite — merci.",
         "SUPPORT_SPONSORS_HINT": "Récurrent ou ponctuel",
         "SUPPORT_KOFI_HINT": "Offrez-moi un café",
-        "EPG_NOTE": "Actuellement, l'EPG n'est disponible que dans la version Electron d'IPTVnator.",
+        "EPG_NOTE": "Actuellement, l'EPG n'est disponible que dans la version Electron d'IPTVpwa.",
         "EPG_NOTE_URL_TEXT": "Vérifiez-le ici",
         "IMPORT_EXPORT_DATA": "Importer/exporter des listes de lecture",
         "IMPORT_EXPORT_DATA_DESCRIPTION": "Exportez ou importez des listes au format JSON utilisé dans l'application.",
@@ -502,7 +502,7 @@
     "NO": "Non",
     "MENU": {
         "OPEN": "Ouvrir le menu",
-        "SUPPORT_ARIA": "Soutenir IPTVnator sur GitHub",
+        "SUPPORT_ARIA": "Soutenir IPTVpwa sur GitHub",
         "SETTINGS": "Paramètres",
         "SETTINGS_ARIA": "Ouvrir les paramètres",
         "BUG_REPORT": "Signaler un bug",
@@ -512,10 +512,10 @@
         "SUPPORT_PROJECT": "Soutenir le projet"
     },
     "ABOUT": {
-        "TITLE": "À propos d'IPTVnator",
+        "TITLE": "À propos d'IPTVpwa",
         "DESCRIPTION": "Application lecteur IPTV multiplateforme avec de nombreuses fonctionnalités, comme la prise en charge des listes m3u et m3u8, les favoris, le guide TV, les archives TV/rattrapage et plus encore.",
         "VERSION": "Version",
-        "GITHUB_TOOLTIP": "Dépôt IPTVnator sur GitHub",
+        "GITHUB_TOOLTIP": "Dépôt IPTVpwa sur GitHub",
         "BUY_ME_A_COFFEE_TOOLTIP": "Offrez-moi un café",
         "TWITTER_TOOLTIP": "Partager sur Twitter"
     },
@@ -770,7 +770,7 @@
             "NOT_YET_SYNCED": "Pas encore synchronisé"
         },
         "SHELL": {
-            "BRAND_ALT": "IPTVnator",
+            "BRAND_ALT": "IPTVpwa",
             "RAIL_DASHBOARD": "Tableau de bord",
             "OPEN_DASHBOARD": "Ouvrir le tableau de bord",
             "RAIL_SOURCES": "Sources",

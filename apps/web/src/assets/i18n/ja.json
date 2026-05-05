@@ -6,7 +6,7 @@
     "SHOW_LESS": "折りたたむ",
     "PLAYLISTS": "プレイリスト",
     "HOME": {
-        "TITLE": "IPTVnator",
+        "TITLE": "IPTVpwa",
         "SUBTITLE": "リストからプレイリストを選択するか、新しいプレイリストを追加してください",
         "TABS": {
             "RECENTLY_ADDED": "最近追加したプレイリスト",
@@ -19,7 +19,7 @@
         "PLAYLISTS": {
             "NO_PLAYLISTS": "プレイリストが追加されていません",
             "ADD_FIRST": "最初のプレイリストを追加してください",
-            "WELCOME_TITLE": "IPTVnatorへようこそ",
+            "WELCOME_TITLE": "IPTVpwaへようこそ",
             "WELCOME_DESCRIPTION": "最初のプレイリストを追加してストリーミングを始めましょう。お好みのIPTVサービスに接続して、ライブTV、映画、シリーズをお楽しみください。",
             "ADD_YOUR_FIRST": "最初のプレイリストを追加",
             "FEATURE_M3U": "M3U/M3U8ファイル",
@@ -218,7 +218,7 @@
         "NAV_ABOUT": "アプリについて",
         "APP_PREFERENCES": "アプリ設定",
         "HERO_EYEBROW": "ワークスペース設定",
-        "HERO_TITLE": "IPTVnatorをカスタマイズ",
+        "HERO_TITLE": "IPTVpwaをカスタマイズ",
         "HERO_DESCRIPTION": "現在のワークスペースの見た目を保ったまま、再生、番組表、リモートアクセス、データ管理を一カ所で調整できます。",
         "SUBTITLE": "アプリケーションの設定を変更",
         "DESCRIPTION": "以下のオプションを調整し、変更を保存ボタンで確定してください",
@@ -270,14 +270,14 @@
         "COVER_SIZE_MEDIUM": "中",
         "COVER_SIZE_LARGE": "大",
         "STARTUP_BEHAVIOR": "起動時の表示",
-        "STARTUP_BEHAVIOR_DESCRIPTION": "IPTVnatorを起動したときに最初に利用可能なワークスペースビューを開くか、最後に表示していたセクションを復元するかを選択します。「最初のビュー」は、ダッシュボードが有効な場合はダッシュボード、無効な場合はソースを意味します。",
+        "STARTUP_BEHAVIOR_DESCRIPTION": "IPTVpwaを起動したときに最初に利用可能なワークスペースビューを開くか、最後に表示していたセクションを復元するかを選択します。「最初のビュー」は、ダッシュボードが有効な場合はダッシュボード、無効な場合はソースを意味します。",
         "STARTUP_BEHAVIOR_FIRST_VIEW": "最初に利用可能なビュー",
         "STARTUP_BEHAVIOR_RESTORE_LAST_VIEW": "最後のビューを復元",
         "SHOW_CAPTIONS_DESCRIPTION": "デフォルトで字幕を表示/非表示",
         "SHOW_EXTERNAL_PLAYBACK_BAR": "再生中フッターを表示",
         "SHOW_EXTERNAL_PLAYBACK_BAR_DESCRIPTION": "デスクトップでワークスペース下部に外部プレーヤーのステータスバーを表示し続けます。",
         "VERSION_DESCRIPTION": "アプリケーションの現在のバージョン",
-        "ABOUT_SUBTITLE": "バージョン、プロジェクトのリンク、IPTVnatorをサポートする方法。",
+        "ABOUT_SUBTITLE": "バージョン、プロジェクトのリンク、IPTVpwaをサポートする方法。",
         "EMBEDDED_MPV_NOTICE_TITLE": "組み込みMPVランタイム",
         "EMBEDDED_MPV_NOTICE_DESCRIPTION": "macOS版のビルドには、実験的な組み込みMPVプレーヤー用のlibmpvおよびFFmpegライブラリを同梱できます。MPVアプリを別途インストールする必要はありません。フォールバックとして外部MPVおよびVLCも引き続き利用できます。",
         "COMMUNITY": "プロジェクトとコミュニティ",
@@ -287,10 +287,10 @@
         "LINK_BLOG_DESCRIPTION": "リリースノート、ヒント、プロジェクトの最新情報",
         "LINK_TELEGRAM_DESCRIPTION": "お知らせ、コミュニティ、サポート",
         "SUPPORT_TITLE": "プロジェクトをサポート",
-        "SUPPORT_DESCRIPTION": "IPTVnatorはオープンに開発されている無料のオープンソースソフトウェアです。日々の利用に役立っているなら、わずかなご支援がプロジェクトの継続と今後の方向性を後押しします。ありがとうございます。",
+        "SUPPORT_DESCRIPTION": "IPTVpwaはオープンに開発されている無料のオープンソースソフトウェアです。日々の利用に役立っているなら、わずかなご支援がプロジェクトの継続と今後の方向性を後押しします。ありがとうございます。",
         "SUPPORT_SPONSORS_HINT": "定期または1回限り",
         "SUPPORT_KOFI_HINT": "コーヒーを奢る",
-        "EPG_NOTE": "現在、EPGはIPTVnatorのelectronベース版でのみ利用可能です。",
+        "EPG_NOTE": "現在、EPGはIPTVpwaのelectronベース版でのみ利用可能です。",
         "EPG_NOTE_URL_TEXT": "こちらをチェック",
         "IMPORT_EXPORT_DATA": "プレイリストのインポート/エクスポート",
         "IMPORT_EXPORT_DATA_DESCRIPTION": "アプリケーション内で使用されているJSONフォーマットでプレイリストをエクスポートまたはインポート。",
@@ -502,7 +502,7 @@
     "NO": "いいえ",
     "MENU": {
         "OPEN": "メニューを開く",
-        "SUPPORT_ARIA": "GitHubでIPTVnatorをサポート",
+        "SUPPORT_ARIA": "GitHubでIPTVpwaをサポート",
         "SETTINGS": "設定",
         "SETTINGS_ARIA": "設定を開く",
         "BUG_REPORT": "バグを報告",
@@ -512,7 +512,7 @@
         "SUPPORT_PROJECT": "プロジェクトをサポート"
     },
     "ABOUT": {
-        "TITLE": "IPTVnatorについて",
+        "TITLE": "IPTVpwaについて",
         "DESCRIPTION": "m3uやm3u8プレイリストのサポート、お気に入り、TV番組表、TVアーカイブ/キャッチアップなど、複数の機能を備えたクロスプラットフォームのIPTVプレーヤーアプリケーション。",
         "VERSION": "バージョン",
         "GITHUB_TOOLTIP": "GitHub上のITPVnatorリポジトリ",
@@ -770,7 +770,7 @@
             "NOT_YET_SYNCED": "未同期"
         },
         "SHELL": {
-            "BRAND_ALT": "IPTVnator",
+            "BRAND_ALT": "IPTVpwa",
             "RAIL_DASHBOARD": "ダッシュボード",
             "OPEN_DASHBOARD": "ダッシュボードを開く",
             "RAIL_SOURCES": "ソース",

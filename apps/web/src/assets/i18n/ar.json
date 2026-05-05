@@ -6,7 +6,7 @@
     "SHOW_LESS": "أقل",
     "PLAYLISTS": "قوائم التشغيل",
     "HOME": {
-        "TITLE": "IPTVnator",
+        "TITLE": "IPTVpwa",
         "SUBTITLE": "يرجى اختيار قائمة تشغيل من القائمة أو إضافة قائمة جديدة",
         "TABS": {
             "RECENTLY_ADDED": "قوائم التشغيل المضافة مؤخرًا",
@@ -19,7 +19,7 @@
         "PLAYLISTS": {
             "NO_PLAYLISTS": "لم تُضف أي قوائم تشغيل",
             "ADD_FIRST": "يرجى إضافة أول قائمة تشغيل",
-            "WELCOME_TITLE": "مرحبًا بك في IPTVnator",
+            "WELCOME_TITLE": "مرحبًا بك في IPTVpwa",
             "WELCOME_DESCRIPTION": "ابدأ رحلة البث بإضافة قائمة التشغيل الأولى. اتصل بخدمة IPTV المفضلة لديك واستمتع بالتلفزيون المباشر والأفلام والمسلسلات.",
             "ADD_YOUR_FIRST": "أضف قائمة التشغيل الأولى",
             "FEATURE_M3U": "ملفات M3U/M3U8",
@@ -218,7 +218,7 @@
         "NAV_ABOUT": "حول",
         "APP_PREFERENCES": "تفضيلات التطبيق",
         "HERO_EYEBROW": "إعدادات مساحة العمل",
-        "HERO_TITLE": "خصّص تجربة IPTVnator",
+        "HERO_TITLE": "خصّص تجربة IPTVpwa",
         "HERO_DESCRIPTION": "اضبط التشغيل، والأدلة، والوصول عن بعد، ومعالجة البيانات من مكان واحد دون فقدان نمط مساحة العمل الحالي.",
         "SUBTITLE": "تعديل تكوين التطبيق",
         "DESCRIPTION": "يرجى ضبط الخيارات أدناه ثم النقر على حفظ التغييرات",
@@ -270,14 +270,14 @@
         "COVER_SIZE_MEDIUM": "متوسط",
         "COVER_SIZE_LARGE": "كبير",
         "STARTUP_BEHAVIOR": "عرض البدء",
-        "STARTUP_BEHAVIOR_DESCRIPTION": "اختر ما إذا كان IPTVnator يفتح أول عرض متاح في مساحة العمل أو يستعيد آخر عرض على مستوى القسم. العرض الأول يعني لوحة التحكم عند تفعيلها، وإلا فالمصادر.",
+        "STARTUP_BEHAVIOR_DESCRIPTION": "اختر ما إذا كان IPTVpwa يفتح أول عرض متاح في مساحة العمل أو يستعيد آخر عرض على مستوى القسم. العرض الأول يعني لوحة التحكم عند تفعيلها، وإلا فالمصادر.",
         "STARTUP_BEHAVIOR_FIRST_VIEW": "أول عرض متاح",
         "STARTUP_BEHAVIOR_RESTORE_LAST_VIEW": "استعادة آخر عرض",
         "SHOW_CAPTIONS_DESCRIPTION": "عرض أو إخفاء الترجمات افتراضيًا",
         "SHOW_EXTERNAL_PLAYBACK_BAR": "عرض شريط التشغيل الحالي",
         "SHOW_EXTERNAL_PLAYBACK_BAR_DESCRIPTION": "إبقاء شريط حالة المشغل الخارجي مرئيًا في أسفل مساحة العمل على سطح المكتب.",
         "VERSION_DESCRIPTION": "الإصدار الحالي للتطبيق",
-        "ABOUT_SUBTITLE": "الإصدار وروابط المشروع وطرق دعم IPTVnator.",
+        "ABOUT_SUBTITLE": "الإصدار وروابط المشروع وطرق دعم IPTVpwa.",
         "EMBEDDED_MPV_NOTICE_TITLE": "بيئة تشغيل MPV المضمّنة",
         "EMBEDDED_MPV_NOTICE_DESCRIPTION": "يمكن أن تتضمن إصدارات macOS مكتبتي libmpv و FFmpeg المرفقتين لمشغل MPV المضمّن التجريبي. لا يحتاج المستخدمون إلى تثبيت تطبيق MPV بشكل منفصل؛ ويبقى MPV و VLC الخارجيان متاحين كمشغلين احتياطيين.",
         "COMMUNITY": "المشروع والمجتمع",
@@ -287,7 +287,7 @@
         "LINK_BLOG_DESCRIPTION": "ملاحظات الإصدار، والنصائح، وتحديثات المشروع",
         "LINK_TELEGRAM_DESCRIPTION": "الإعلانات والمجتمع والدعم",
         "SUPPORT_TITLE": "ادعم المشروع",
-        "SUPPORT_DESCRIPTION": "IPTVnator تطبيق مجاني ومفتوح المصدر، وتم بناؤه بشكل مفتوح. إذا كان جزءًا من روتينك اليومي، فإن أي مساهمة صغيرة تساعد في إبقاء المشروع حيًا وتحديد ما يأتي لاحقًا — شكرًا لك.",
+        "SUPPORT_DESCRIPTION": "IPTVpwa تطبيق مجاني ومفتوح المصدر، وتم بناؤه بشكل مفتوح. إذا كان جزءًا من روتينك اليومي، فإن أي مساهمة صغيرة تساعد في إبقاء المشروع حيًا وتحديد ما يأتي لاحقًا — شكرًا لك.",
         "SUPPORT_SPONSORS_HINT": "متكرر أو لمرة واحدة",
         "SUPPORT_KOFI_HINT": "اشتري لي قهوة",
         "EPG_NOTE": "الـ EPG متاح فقط في نسخة Electron من التطبيق.",
@@ -502,7 +502,7 @@
     "NO": "لا",
     "MENU": {
         "OPEN": "فتح القائمة",
-        "SUPPORT_ARIA": "دعم IPTVnator على GitHub",
+        "SUPPORT_ARIA": "دعم IPTVpwa على GitHub",
         "SETTINGS": "الإعدادات",
         "SETTINGS_ARIA": "فتح الإعدادات",
         "BUG_REPORT": "ابلاغ عن خلل",
@@ -512,10 +512,10 @@
         "SUPPORT_PROJECT": "دعم المشروع"
     },
     "ABOUT": {
-        "TITLE": "حول IPTVnator",
+        "TITLE": "حول IPTVpwa",
         "DESCRIPTION": "تطبيق مشغل IPTV متعدد المنصات مع ميزات مثل دعم قوائم M3U/M3U8، المفضلة، الدليل التلفزيوني، الأرشيف، والمزيد.",
         "VERSION": "الإصدار",
-        "GITHUB_TOOLTIP": "مستودع IPTVnator على GitHub",
+        "GITHUB_TOOLTIP": "مستودع IPTVpwa على GitHub",
         "BUY_ME_A_COFFEE_TOOLTIP": "اشتري لي قهوة",
         "TWITTER_TOOLTIP": "مشاركة على تويتر"
     },
@@ -770,7 +770,7 @@
             "NOT_YET_SYNCED": "لم تتم المزامنة بعد"
         },
         "SHELL": {
-            "BRAND_ALT": "IPTVnator",
+            "BRAND_ALT": "IPTVpwa",
             "RAIL_DASHBOARD": "لوحة التحكم",
             "OPEN_DASHBOARD": "فتح لوحة التحكم",
             "RAIL_SOURCES": "المصادر",

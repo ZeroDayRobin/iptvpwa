@@ -6,7 +6,7 @@
     "SHOW_LESS": "Weniger",
     "PLAYLISTS": "Playlisten",
     "HOME": {
-        "TITLE": "IPTVnator",
+        "TITLE": "IPTVpwa",
         "SUBTITLE": "Wählen Sie eine Playlist aus oder laden Sie eine neue Playlist hoch",
         "TABS": {
             "RECENTLY_ADDED": "Zuletzt hinzugefügt",
@@ -19,7 +19,7 @@
         "PLAYLISTS": {
             "NO_PLAYLISTS": "Noch keine Playlisten hinzugefügt",
             "ADD_FIRST": "Bitte fügen Sie eine neue Playlist hinzu",
-            "WELCOME_TITLE": "Willkommen bei IPTVnator",
+            "WELCOME_TITLE": "Willkommen bei IPTVpwa",
             "WELCOME_DESCRIPTION": "Beginnen Sie Ihre Streaming-Reise, indem Sie Ihre erste Playlist hinzufügen. Verbinden Sie sich mit Ihrem bevorzugten IPTV-Dienst und genießen Sie Live-TV, Filme und Serien.",
             "ADD_YOUR_FIRST": "Ihre erste Playlist hinzufügen",
             "FEATURE_M3U": "M3U/M3U8-Dateien",
@@ -218,7 +218,7 @@
         "NAV_ABOUT": "Info",
         "APP_PREFERENCES": "App-Einstellungen",
         "HERO_EYEBROW": "Arbeitsbereich",
-        "HERO_TITLE": "IPTVnator anpassen",
+        "HERO_TITLE": "IPTVpwa anpassen",
         "HERO_DESCRIPTION": "Passen Sie Wiedergabe, Programmführer, Fernzugriff und Datenverwaltung zentral an, ohne den Stil des Arbeitsbereichs zu verlieren.",
         "SUBTITLE": "Die App-Einstellungen ändern",
         "DESCRIPTION": "Bitte vergessen Sie nicht die Änderungen mit dem Speicher-Button zu bestätigen",
@@ -270,14 +270,14 @@
         "COVER_SIZE_MEDIUM": "Mittel",
         "COVER_SIZE_LARGE": "Groß",
         "STARTUP_BEHAVIOR": "Startansicht",
-        "STARTUP_BEHAVIOR_DESCRIPTION": "Legen Sie fest, ob IPTVnator die erste verfügbare Workspace-Ansicht oder Ihre zuletzt geöffnete Abschnittsansicht startet. Erste Ansicht bedeutet Dashboard, wenn aktiviert, sonst Quellen.",
+        "STARTUP_BEHAVIOR_DESCRIPTION": "Legen Sie fest, ob IPTVpwa die erste verfügbare Workspace-Ansicht oder Ihre zuletzt geöffnete Abschnittsansicht startet. Erste Ansicht bedeutet Dashboard, wenn aktiviert, sonst Quellen.",
         "STARTUP_BEHAVIOR_FIRST_VIEW": "Erste verfügbare Ansicht",
         "STARTUP_BEHAVIOR_RESTORE_LAST_VIEW": "Letzte Ansicht wiederherstellen",
         "SHOW_CAPTIONS_DESCRIPTION": "Untertitel standardmäßig ein- oder ausblenden",
         "SHOW_EXTERNAL_PLAYBACK_BAR": "Now-Playing-Fußleiste anzeigen",
         "SHOW_EXTERNAL_PLAYBACK_BAR_DESCRIPTION": "Zeigt die Statusleiste für externe Player unten im Arbeitsbereich auf dem Desktop an.",
         "VERSION_DESCRIPTION": "Aktuelle Version der Anwendung",
-        "ABOUT_SUBTITLE": "Version, Projekt-Links und Möglichkeiten, IPTVnator zu unterstützen.",
+        "ABOUT_SUBTITLE": "Version, Projekt-Links und Möglichkeiten, IPTVpwa zu unterstützen.",
         "EMBEDDED_MPV_NOTICE_TITLE": "Eingebettete MPV-Laufzeit",
         "EMBEDDED_MPV_NOTICE_DESCRIPTION": "macOS-Builds können gebündelte libmpv- und FFmpeg-Bibliotheken für den experimentellen eingebetteten MPV-Player enthalten. Eine separate Installation der MPV-App ist nicht erforderlich; externes MPV und VLC bleiben weiterhin als Fallback-Player verfügbar.",
         "COMMUNITY": "Projekt & Community",
@@ -287,10 +287,10 @@
         "LINK_BLOG_DESCRIPTION": "Release Notes, Tipps und Projekt-Updates",
         "LINK_TELEGRAM_DESCRIPTION": "Ankündigungen, Community und Support",
         "SUPPORT_TITLE": "Projekt unterstützen",
-        "SUPPORT_DESCRIPTION": "IPTVnator ist kostenlose Open-Source-Software, die im Offenen entwickelt wird. Wenn sie Teil deines Alltags ist, hilft ein kleiner Beitrag, das Projekt am Leben zu halten und die nächsten Schritte zu gestalten — danke!",
+        "SUPPORT_DESCRIPTION": "IPTVpwa ist kostenlose Open-Source-Software, die im Offenen entwickelt wird. Wenn sie Teil deines Alltags ist, hilft ein kleiner Beitrag, das Projekt am Leben zu halten und die nächsten Schritte zu gestalten — danke!",
         "SUPPORT_SPONSORS_HINT": "Wiederkehrend oder einmalig",
         "SUPPORT_KOFI_HINT": "Spendiere einen Kaffee",
-        "EPG_NOTE": "Derzeit ist EPG nur in der Electron-basierten Version von IPTVnator verfügbar.",
+        "EPG_NOTE": "Derzeit ist EPG nur in der Electron-basierten Version von IPTVpwa verfügbar.",
         "EPG_NOTE_URL_TEXT": "Überprüfen Sie es hier",
         "IMPORT_EXPORT_DATA": "Wiedergabelisten importieren/exportieren",
         "IMPORT_EXPORT_DATA_DESCRIPTION": "Exportieren oder importieren Sie Wiedergabelisten im JSON-Format, das in der Anwendung verwendet wird.",
@@ -502,7 +502,7 @@
     "NO": "Nein",
     "MENU": {
         "OPEN": "Menü öffnen",
-        "SUPPORT_ARIA": "IPTVnator auf GitHub unterstützen",
+        "SUPPORT_ARIA": "IPTVpwa auf GitHub unterstützen",
         "SETTINGS": "Einstellungen",
         "SETTINGS_ARIA": "Einstellungen öffnen",
         "BUG_REPORT": "Fehler melden",
@@ -512,7 +512,7 @@
         "SUPPORT_PROJECT": "Projekt unterstützen"
     },
     "ABOUT": {
-        "TITLE": "Über IPTVnator",
+        "TITLE": "Über IPTVpwa",
         "DESCRIPTION": "Plattformübergreifende IPTV-Player-Anwendung mit mehreren Funktionen wie Unterstützung von M3U- und M3U8-Wiedergabelisten, Favoriten, TV-Guide, TV-Archiv/Catchup und mehr.",
         "VERSION": "Version",
         "GITHUB_TOOLTIP": "ITPVnator-Repository auf GitHub",
@@ -770,7 +770,7 @@
             "NOT_YET_SYNCED": "Noch nicht synchronisiert"
         },
         "SHELL": {
-            "BRAND_ALT": "IPTVnator",
+            "BRAND_ALT": "IPTVpwa",
             "RAIL_DASHBOARD": "Dashboard",
             "OPEN_DASHBOARD": "Dashboard öffnen",
             "RAIL_SOURCES": "Quellen",

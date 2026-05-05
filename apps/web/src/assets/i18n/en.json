@@ -6,7 +6,7 @@
     "SHOW_LESS": "Less",
     "PLAYLISTS": "Playlists",
     "HOME": {
-        "TITLE": "IPTVnator",
+        "TITLE": "IPTVpwa",
         "SUBTITLE": "Please select a playlist from the list or add a new playlist",
         "TABS": {
             "RECENTLY_ADDED": "Recently added playlists",
@@ -19,7 +19,7 @@
         "PLAYLISTS": {
             "NO_PLAYLISTS": "No playlists were added",
             "ADD_FIRST": "Please add your first playlist",
-            "WELCOME_TITLE": "Welcome to IPTVnator",
+            "WELCOME_TITLE": "Welcome to IPTVpwa",
             "WELCOME_DESCRIPTION": "Start your streaming journey by adding your first playlist. Connect to your favorite IPTV service and enjoy live TV, movies, and series.",
             "ADD_YOUR_FIRST": "Add Your First Playlist",
             "FEATURE_M3U": "M3U/M3U8 Files",
@@ -218,7 +218,7 @@
         "NAV_ABOUT": "About",
         "APP_PREFERENCES": "App preferences",
         "HERO_EYEBROW": "Workspace settings",
-        "HERO_TITLE": "Shape how IPTVnator feels",
+        "HERO_TITLE": "Shape how IPTVpwa feels",
         "HERO_DESCRIPTION": "Tune playback, guides, remote access and data handling from one place without losing the current workspace style.",
         "SUBTITLE": "Change the configuration of the application",
         "DESCRIPTION": "Please adapt the options from the list below and confirm with the save changes button",
@@ -270,14 +270,14 @@
         "COVER_SIZE_MEDIUM": "Medium",
         "COVER_SIZE_LARGE": "Large",
         "STARTUP_BEHAVIOR": "Startup view",
-        "STARTUP_BEHAVIOR_DESCRIPTION": "Choose whether IPTVnator opens the first available workspace view or restores your last section-level view. First view means Dashboard when enabled, otherwise Sources.",
+        "STARTUP_BEHAVIOR_DESCRIPTION": "Choose whether IPTVpwa opens the first available workspace view or restores your last section-level view. First view means Dashboard when enabled, otherwise Sources.",
         "STARTUP_BEHAVIOR_FIRST_VIEW": "First available view",
         "STARTUP_BEHAVIOR_RESTORE_LAST_VIEW": "Restore last view",
         "SHOW_CAPTIONS_DESCRIPTION": "Show or hide subtitles by default",
         "SHOW_EXTERNAL_PLAYBACK_BAR": "Show now playing footer",
         "SHOW_EXTERNAL_PLAYBACK_BAR_DESCRIPTION": "Keep the external-player status bar visible at the bottom of the workspace on desktop.",
         "VERSION_DESCRIPTION": "Current version of the application",
-        "ABOUT_SUBTITLE": "Version, project links and ways to support IPTVnator.",
+        "ABOUT_SUBTITLE": "Version, project links and ways to support IPTVpwa.",
         "EMBEDDED_MPV_NOTICE_TITLE": "Embedded MPV runtime",
         "EMBEDDED_MPV_NOTICE_DESCRIPTION": "macOS builds can include bundled libmpv and FFmpeg libraries for the experimental Embedded MPV player. Users do not need to install the MPV app separately; external MPV and VLC remain available as fallback players.",
         "COMMUNITY": "Project & community",
@@ -287,10 +287,10 @@
         "LINK_BLOG_DESCRIPTION": "Release notes, tips and project updates",
         "LINK_TELEGRAM_DESCRIPTION": "Announcements, community and support",
         "SUPPORT_TITLE": "Support the project",
-        "SUPPORT_DESCRIPTION": "IPTVnator is free and open source, built in the open. If it is part of your daily routine, a small contribution helps keep the project alive and shape what comes next — thank you.",
+        "SUPPORT_DESCRIPTION": "IPTVpwa is free and open source, built in the open. If it is part of your daily routine, a small contribution helps keep the project alive and shape what comes next — thank you.",
         "SUPPORT_SPONSORS_HINT": "Recurring or one-time",
         "SUPPORT_KOFI_HINT": "Buy me a coffee",
-        "EPG_NOTE": "Currently EPG is available only in the electron-based version of IPTVnator.",
+        "EPG_NOTE": "Currently EPG is available only in the electron-based version of IPTVpwa.",
         "EPG_NOTE_URL_TEXT": "Check it here",
         "IMPORT_EXPORT_DATA": "Import/export playlist backups",
         "IMPORT_EXPORT_DATA_DESCRIPTION": "Export or restore playlist backups including M3U snapshots, Xtream/Stalker connection metadata, user state, and EPG source URLs.",
@@ -502,7 +502,7 @@
     "NO": "No",
     "MENU": {
         "OPEN": "Open menu",
-        "SUPPORT_ARIA": "Support IPTVnator on GitHub",
+        "SUPPORT_ARIA": "Support IPTVpwa on GitHub",
         "SETTINGS": "Settings",
         "SETTINGS_ARIA": "Open settings",
         "BUG_REPORT": "Report a bug",
@@ -512,7 +512,7 @@
         "SUPPORT_PROJECT": "Support project"
     },
     "ABOUT": {
-        "TITLE": "About IPTVnator",
+        "TITLE": "About IPTVpwa",
         "DESCRIPTION": "Cross-platform IPTV player application with multiple features, such as support of m3u and m3u8 playlists, favorites, TV guide, TV archive/catchup and more.",
         "VERSION": "Version",
         "GITHUB_TOOLTIP": "ITPVnator repository on GitHub",
@@ -770,7 +770,7 @@
             "NOT_YET_SYNCED": "Not yet synced"
         },
         "SHELL": {
-            "BRAND_ALT": "IPTVnator",
+            "BRAND_ALT": "IPTVpwa",
             "RAIL_DASHBOARD": "Dashboard",
             "OPEN_DASHBOARD": "Open dashboard",
             "RAIL_SOURCES": "Sources",

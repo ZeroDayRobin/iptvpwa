@@ -6,7 +6,7 @@
     "SHOW_LESS": "Daha az",
     "PLAYLISTS": "Oynatma Listeleri",
     "HOME": {
-        "TITLE": "IPTVnator",
+        "TITLE": "IPTVpwa",
         "SUBTITLE": "Lütfen listeden bir oynatma listesi seçin veya yeni bir liste ekleyin",
         "TABS": {
             "RECENTLY_ADDED": "Son Eklenen Listeler",
@@ -19,7 +19,7 @@
         "PLAYLISTS": {
             "NO_PLAYLISTS": "Oynatma listesi eklenmedi",
             "ADD_FIRST": "Lütfen ilk oynatma listenizi ekleyin",
-            "WELCOME_TITLE": "IPTVnator'a Hoş Geldiniz",
+            "WELCOME_TITLE": "IPTVpwa'a Hoş Geldiniz",
             "WELCOME_DESCRIPTION": "İlk oynatma listenizi ekleyerek yayın yolculuğunuza başlayın. Favori IPTV hizmetinize bağlanın ve canlı TV, film ve dizilerin keyfini çıkarın.",
             "ADD_YOUR_FIRST": "İlk Oynatma Listenizi Ekleyin",
             "FEATURE_M3U": "M3U/M3U8 Dosyaları",
@@ -218,7 +218,7 @@
         "NAV_ABOUT": "Hakkında",
         "APP_PREFERENCES": "Uygulama tercihleri",
         "HERO_EYEBROW": "Çalışma alanı ayarları",
-        "HERO_TITLE": "IPTVnator'un nasıl hissettirdiğini şekillendirin",
+        "HERO_TITLE": "IPTVpwa'un nasıl hissettirdiğini şekillendirin",
         "HERO_DESCRIPTION": "Oynatma, rehberler, uzaktan erişim ve veri yönetimini geçerli çalışma alanı stilini kaybetmeden tek bir yerden ayarlayın.",
         "SUBTITLE": "Uygulamanın yapılandırmasını değiştir",
         "DESCRIPTION": "Lütfen aşağıdaki seçenekleri düzenleyin ve değişiklikleri kaydet düğmesiyle onaylayın",
@@ -270,14 +270,14 @@
         "COVER_SIZE_MEDIUM": "Orta",
         "COVER_SIZE_LARGE": "Büyük",
         "STARTUP_BEHAVIOR": "Başlangıç görünümü",
-        "STARTUP_BEHAVIOR_DESCRIPTION": "IPTVnator'un ilk kullanılabilir çalışma alanı görünümünü mü açacağını yoksa bölüm düzeyindeki son görünümünüzü mü geri yükleyeceğini seçin. İlk görünüm, Pano etkinleştirildiğinde Pano, aksi takdirde Kaynaklar anlamına gelir.",
+        "STARTUP_BEHAVIOR_DESCRIPTION": "IPTVpwa'un ilk kullanılabilir çalışma alanı görünümünü mü açacağını yoksa bölüm düzeyindeki son görünümünüzü mü geri yükleyeceğini seçin. İlk görünüm, Pano etkinleştirildiğinde Pano, aksi takdirde Kaynaklar anlamına gelir.",
         "STARTUP_BEHAVIOR_FIRST_VIEW": "İlk kullanılabilir görünüm",
         "STARTUP_BEHAVIOR_RESTORE_LAST_VIEW": "Son görünümü geri yükle",
         "SHOW_CAPTIONS_DESCRIPTION": "Varsayılan olarak altyazıları göster veya gizle",
         "SHOW_EXTERNAL_PLAYBACK_BAR": "Şu an oynatılıyor altbilgisini göster",
         "SHOW_EXTERNAL_PLAYBACK_BAR_DESCRIPTION": "Masaüstünde harici oynatıcı durum çubuğunu çalışma alanının altında görünür tutun.",
         "VERSION_DESCRIPTION": "Uygulamanın geçerli sürümü",
-        "ABOUT_SUBTITLE": "Sürüm, proje bağlantıları ve IPTVnator'u desteklemenin yolları.",
+        "ABOUT_SUBTITLE": "Sürüm, proje bağlantıları ve IPTVpwa'u desteklemenin yolları.",
         "EMBEDDED_MPV_NOTICE_TITLE": "Gömülü MPV çalışma zamanı",
         "EMBEDDED_MPV_NOTICE_DESCRIPTION": "macOS sürümleri, deneysel Gömülü MPV oynatıcı için paketlenmiş libmpv ve FFmpeg kitaplıklarını içerebilir. Kullanıcıların MPV uygulamasını ayrıca kurmasına gerek yoktur; harici MPV ve VLC, yedek oynatıcı olarak kullanılabilir kalır.",
         "COMMUNITY": "Proje ve topluluk",
@@ -287,10 +287,10 @@
         "LINK_BLOG_DESCRIPTION": "Sürüm notları, ipuçları ve proje güncellemeleri",
         "LINK_TELEGRAM_DESCRIPTION": "Duyurular, topluluk ve destek",
         "SUPPORT_TITLE": "Projeyi destekleyin",
-        "SUPPORT_DESCRIPTION": "IPTVnator ücretsiz ve açık kaynaklıdır, açıkta geliştirilir. Günlük rutininizin bir parçasıysa, küçük bir katkı projeyi canlı tutmaya ve sırada ne olduğunu şekillendirmeye yardımcı olur — teşekkürler.",
+        "SUPPORT_DESCRIPTION": "IPTVpwa ücretsiz ve açık kaynaklıdır, açıkta geliştirilir. Günlük rutininizin bir parçasıysa, küçük bir katkı projeyi canlı tutmaya ve sırada ne olduğunu şekillendirmeye yardımcı olur — teşekkürler.",
         "SUPPORT_SPONSORS_HINT": "Yinelenen veya tek seferlik",
         "SUPPORT_KOFI_HINT": "Bana bir kahve ısmarla",
-        "EPG_NOTE": "Şu anda EPG, yalnızca Electron tabanlı IPTVnator sürümünde kullanılabilir.",
+        "EPG_NOTE": "Şu anda EPG, yalnızca Electron tabanlı IPTVpwa sürümünde kullanılabilir.",
         "EPG_NOTE_URL_TEXT": "Buradan kontrol edin",
         "IMPORT_EXPORT_DATA": "Oynatma listelerini içe/dışa aktar",
         "IMPORT_EXPORT_DATA_DESCRIPTION": "Uygulama içi kullanılan JSON formatında oynatma listelerini dışa aktar veya içe aktar.",
@@ -502,7 +502,7 @@
     "NO": "Hayır",
     "MENU": {
         "OPEN": "Menüyü aç",
-        "SUPPORT_ARIA": "IPTVnator'u GitHub'da destekleyin",
+        "SUPPORT_ARIA": "IPTVpwa'u GitHub'da destekleyin",
         "SETTINGS": "Ayarlar",
         "SETTINGS_ARIA": "Ayarları aç",
         "BUG_REPORT": "Hata bildir",
@@ -512,10 +512,10 @@
         "SUPPORT_PROJECT": "Projeyi destekleyin"
     },
     "ABOUT": {
-        "TITLE": "IPTVnator Hakkında",
+        "TITLE": "IPTVpwa Hakkında",
         "DESCRIPTION": "Çoklu özellikler sunan, m3u ve m3u8 oynatma listeleri, favoriler, TV rehberi, TV arşivi/geri dönük izleme ve daha fazlasını destekleyen çok platformlu IPTV oynatıcı uygulaması.",
         "VERSION": "Sürüm",
-        "GITHUB_TOOLTIP": "IPTVnator GitHub deposu",
+        "GITHUB_TOOLTIP": "IPTVpwa GitHub deposu",
         "BUY_ME_A_COFFEE_TOOLTIP": "Bana bir kahve alın",
         "TWITTER_TOOLTIP": "Twitter'da paylaş"
     },
@@ -770,7 +770,7 @@
             "NOT_YET_SYNCED": "Henüz eşitlenmedi"
         },
         "SHELL": {
-            "BRAND_ALT": "IPTVnator",
+            "BRAND_ALT": "IPTVpwa",
             "RAIL_DASHBOARD": "Pano",
             "OPEN_DASHBOARD": "Panoyu aç",
             "RAIL_SOURCES": "Kaynaklar",
