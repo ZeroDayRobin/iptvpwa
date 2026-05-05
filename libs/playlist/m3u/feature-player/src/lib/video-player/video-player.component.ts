@@ -209,7 +209,10 @@ export class VideoPlayerComponent implements OnInit, OnDestroy {
         if (typeof window === 'undefined') return url;
         if (window.electron) return url;
         if (!url.toLowerCase().startsWith('http://')) return url;
-        return `/api/stream?url=${encodeURIComponent(url)}`;
+        // See xtream-url.service.ts wrapForProxyIfNeeded — path-based form
+        // preserves the `.m3u8`/`.ts`/`.mp4` suffix in the URL pathname so
+        // the player picks the right loader (HLS.js vs native).
+        return `/stream/${encodeURIComponent(url)}`;
     }
     readonly sidebarStorageKey = computed(() =>
         this.activeView() === 'groups'

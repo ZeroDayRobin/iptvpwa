@@ -66,7 +66,13 @@ export class XtreamUrlService {
         if (typeof window === 'undefined') return url;
         if (window.electron) return url;
         if (!url.toLowerCase().startsWith('http://')) return url;
-        return `/api/stream?url=${encodeURIComponent(url)}`;
+        // Path-based proxy URL (rewritten to /api/stream?url=$1 in
+        // vercel.json) so the file extension stays visible in the
+        // pathname. video.js's HLS detection keys off the URL extension
+        // — without this, /api/stream?url=...m3u8 looks like a non-HLS
+        // path and the player falls back to native playback that doesn't
+        // understand m3u8 in Chrome/Firefox.
+        return `/stream/${encodeURIComponent(url)}`;
     }
 
     /**

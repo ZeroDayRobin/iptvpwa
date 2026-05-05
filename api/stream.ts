@@ -43,7 +43,10 @@ function makeProxyUrl(req: VercelRequest, target: string): string {
         (Array.isArray(req.headers['x-forwarded-proto'])
             ? req.headers['x-forwarded-proto'][0]
             : req.headers['x-forwarded-proto']) || 'https';
-    return `${proto}://${host}/api/stream?url=${encodeURIComponent(target)}`;
+    // Path-based form is rewritten to /api/stream?url=$1 by vercel.json.
+    // We use it here too so segment URLs the player loads keep their
+    // .ts/.m3u8/.mp4 extension visible in the pathname.
+    return `${proto}://${host}/stream/${encodeURIComponent(target)}`;
 }
 
 function resolveUrl(base: string, ref: string): string {

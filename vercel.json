@@ -8,6 +8,7 @@
         { "source": "/parse", "destination": "/api/parse" },
         { "source": "/xtream", "destination": "/api/xtream" },
         { "source": "/stalker", "destination": "/api/stalker" },
+        { "source": "/stream/(.*)", "destination": "/api/stream?url=$1" },
         { "source": "/(.*)", "destination": "/index.html" }
     ],
     "headers": [
