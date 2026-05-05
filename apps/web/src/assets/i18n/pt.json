@@ -122,6 +122,7 @@
             "MY_PLAYLISTS": "Minhas playlists",
             "MY_PLAYLISTS_SUBTITLE": "todas as playlists disponíveis",
             "PLAYLIST_UPDATE_SUCCESS": "Sucesso! A playlist foi atualizada com sucesso.",
+            "PLAYLIST_UPDATE_FAILED": "Update failed. Could not save the playlist details.",
             "PLAYLIST_UPDATE_ERROR": "Erro ao atualizar detalhes da playlist.",
             "PLAYLIST_UPDATE_FILE_NOT_FOUND": "Falha ao atualizar a playlist. O arquivo local não está mais disponível. Verifique o caminho do arquivo ou reimporte a playlist.",
             "PLAYLIST_UPDATE_FILE_ACCESS_ERROR": "Falha ao atualizar a playlist. O aplicativo não consegue mais acessar o arquivo local.",

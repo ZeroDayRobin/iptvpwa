@@ -122,6 +122,7 @@
             "MY_PLAYLISTS": "我的播放列表",
             "MY_PLAYLISTS_SUBTITLE": "所有可用的播放列表",
             "PLAYLIST_UPDATE_SUCCESS": "成功！播放列表已成功更新。",
+            "PLAYLIST_UPDATE_FAILED": "Update failed. Could not save the playlist details.",
             "PLAYLIST_UPDATE_ERROR": "更新播放列表详情时出错。",
             "PLAYLIST_UPDATE_FILE_NOT_FOUND": "播放列表刷新失败。本地文件已不可用。请检查文件路径或重新导入播放列表。",
             "PLAYLIST_UPDATE_FILE_ACCESS_ERROR": "播放列表刷新失败。应用程序无法再访问该本地文件。",

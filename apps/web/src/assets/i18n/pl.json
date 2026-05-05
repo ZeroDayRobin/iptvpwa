@@ -122,6 +122,7 @@
             "MY_PLAYLISTS": "Moje listy odtwarzania",
             "MY_PLAYLISTS_SUBTITLE": "wszystkie dostępne listy odtwarzania",
             "PLAYLIST_UPDATE_SUCCESS": "Sukces! Lista odtwarzania została pomyślnie zaktualizowana.",
+            "PLAYLIST_UPDATE_FAILED": "Update failed. Could not save the playlist details.",
             "PLAYLIST_UPDATE_ERROR": "Błąd aktualizacji szczegółów listy odtwarzania.",
             "PLAYLIST_UPDATE_FILE_NOT_FOUND": "Odświeżanie listy odtwarzania nie powiodło się. Plik lokalny jest niedostępny. Sprawdź ścieżkę pliku lub zaimportuj listę ponownie.",
             "PLAYLIST_UPDATE_FILE_ACCESS_ERROR": "Odświeżanie listy odtwarzania nie powiodło się. Aplikacja nie ma już dostępu do pliku lokalnego.",

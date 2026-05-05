@@ -19,8 +19,9 @@ import { Store } from '@ngrx/store';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { PlaylistActions } from 'm3u-state';
 import { firstValueFrom } from 'rxjs';
-import { DatabaseService, PlaylistsService } from 'services';
+import { PlaylistsService } from 'services';
 import { Playlist, PlaylistMeta } from 'shared-interfaces';
+import { XTREAM_DATA_SOURCE } from '@iptvnator/portal/xtream/data-access';
 
 @Component({
     selector: 'app-playlist-info',
@@ -77,7 +78,7 @@ export class PlaylistInfoComponent {
     private formBuilder = inject(UntypedFormBuilder);
     private playlistsService = inject(PlaylistsService);
     private store = inject(Store);
-    private databaseService = inject(DatabaseService);
+    private dataSource = inject(XTREAM_DATA_SOURCE);
     private snackBar = inject(MatSnackBar);
     private translate = inject(TranslateService);
     public playlistData = inject<Playlist & { id: string }>(MAT_DIALOG_DATA);
@@ -176,25 +177,20 @@ export class PlaylistInfoComponent {
     }
 
     async updateXtreamPlaylist(playlist: PlaylistMeta) {
-        const success = await this.databaseService.updateXtreamPlaylistDetails({
-            id: this.playlist._id,
+        // Goes through the IXtreamDataSource abstraction so this works in both
+        // Electron (SQLite via dbService) and PWA (localStorage via
+        // PwaXtreamDataSource.updatePlaylist). Previously called
+        // databaseService.updateXtreamPlaylistDetails directly, which is
+        // Electron-only — in PWA it threw with `window.electron undefined`,
+        // the catch in saveChanges() swallowed it and surfaced the
+        // PLAYLIST_UPDATE_FAILED snackbar.
+        await this.dataSource.updatePlaylist(this.playlist._id, {
+            name: playlist.title,
             title: playlist.title,
             username: playlist.username,
             password: playlist.password,
             serverUrl: playlist.serverUrl,
         });
-
-        if (!success) {
-            throw new Error('Failed to update playlist in database');
-        }
-
-        // TODO: circular dependency
-        /* this.xtreamStore.updatePlaylist({
-            name: playlist.title,
-            username: playlist.username,
-            password: playlist.password,
-            serverUrl: playlist.serverUrl,
-        }); */
     }
 
     async exportPlaylist() {

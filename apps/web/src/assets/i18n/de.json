@@ -122,6 +122,7 @@
             "MY_PLAYLISTS": "Meine Playlisten",
             "MY_PLAYLISTS_SUBTITLE": "Alle verfügbaren Playlisten",
             "PLAYLIST_UPDATE_SUCCESS": "Erfolg! Die Playlist wurde erfolgreich aktualisiert.",
+            "PLAYLIST_UPDATE_FAILED": "Aktualisierung fehlgeschlagen. Playlist-Details konnten nicht gespeichert werden.",
             "PLAYLIST_UPDATE_ERROR": "Fehler beim Aktualisieren der Playlist-Details.",
             "PLAYLIST_UPDATE_FILE_NOT_FOUND": "Aktualisierung der Playlist fehlgeschlagen. Die lokale Datei ist nicht mehr verfügbar. Überprüfen Sie den Dateipfad oder importieren Sie die Playlist erneut.",
             "PLAYLIST_UPDATE_FILE_ACCESS_ERROR": "Aktualisierung der Playlist fehlgeschlagen. Die App kann nicht mehr auf die lokale Datei zugreifen.",

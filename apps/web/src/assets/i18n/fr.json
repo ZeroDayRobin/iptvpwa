@@ -122,6 +122,7 @@
             "MY_PLAYLISTS": "Mes listes de lecture",
             "MY_PLAYLISTS_SUBTITLE": "toutes les listes disponibles",
             "PLAYLIST_UPDATE_SUCCESS": "Succès ! La liste de lecture a été mise à jour avec succès.",
+            "PLAYLIST_UPDATE_FAILED": "Update failed. Could not save the playlist details.",
             "PLAYLIST_UPDATE_ERROR": "Erreur lors de la mise à jour des détails de la liste.",
             "PLAYLIST_UPDATE_FILE_NOT_FOUND": "Échec de l'actualisation de la liste de lecture. Le fichier local n'est plus disponible. Vérifiez le chemin du fichier ou réimportez la liste de lecture.",
             "PLAYLIST_UPDATE_FILE_ACCESS_ERROR": "Échec de l'actualisation de la liste de lecture. L'application ne peut plus accéder au fichier local.",
