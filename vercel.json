@@ -1,6 +1,7 @@
 {
     "$schema": "https://openapi.vercel.sh/vercel.json",
-    "buildCommand": "corepack enable && pnpm install --no-frozen-lockfile && pnpm build:frontend:pwa",
+    "installCommand": "corepack enable && pnpm install --no-frozen-lockfile",
+    "buildCommand": "pnpm build:frontend:pwa",
     "outputDirectory": "dist/apps/web",
     "framework": null,
     "rewrites": [
