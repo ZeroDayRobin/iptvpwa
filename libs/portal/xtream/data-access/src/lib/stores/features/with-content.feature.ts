@@ -1029,9 +1029,7 @@ export function withContent() {
 
                     const fetchOne = async (
                         spec: ContentFetch
-                    ): Promise<
-                        XtreamLiveStream[] | XtreamVodStream[] | XtreamSerieItem[]
-                    > => {
+                    ): Promise<void> => {
                         registerImportOperation(spec.operationId);
                         if (!isPwa) {
                             // In sequential mode keep the legacy progress UI
@@ -1083,7 +1081,6 @@ export function withContent() {
                                 break;
                         }
                         updateContentTypeLoadState(spec.type, 'ready');
-                        return result;
                     };
 
                     const specs: ContentFetch[] = [
