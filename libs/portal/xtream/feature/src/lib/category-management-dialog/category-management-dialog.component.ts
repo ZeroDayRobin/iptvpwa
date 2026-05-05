@@ -17,7 +17,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { TranslatePipe } from '@ngx-translate/core';
-import { DatabaseService, XCategoryFromDb } from 'services';
+import {
+    XTREAM_DATA_SOURCE,
+    XtreamCategoryFromDb,
+} from '@iptvnator/portal/xtream/data-access';
 import { createLogger } from '@iptvnator/portal/shared/util';
 
 export interface CategoryManagementDialogData {
@@ -26,7 +29,7 @@ export interface CategoryManagementDialogData {
     itemCounts: Map<number, number>;
 }
 
-interface CategoryWithSelection extends XCategoryFromDb {
+interface CategoryWithSelection extends XtreamCategoryFromDb {
     selected: boolean;
 }
 
@@ -45,7 +48,7 @@ interface CategoryWithSelection extends XCategoryFromDb {
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CategoryManagementDialogComponent implements OnInit {
-    private readonly dbService = inject(DatabaseService);
+    private readonly dataSource = inject(XTREAM_DATA_SOURCE);
     private readonly dialogRef = inject(
         MatDialogRef<CategoryManagementDialogComponent>
     );
@@ -104,12 +107,12 @@ export class CategoryManagementDialogComponent implements OnInit {
 
     private async waitForCategories(
         type: 'live' | 'movies' | 'series'
-    ): Promise<XCategoryFromDb[]> {
+    ): Promise<XtreamCategoryFromDb[]> {
         const retryDeadlineMs = Date.now() + 10000;
         const expectedCategoryCount = this.data.itemCounts.size;
 
         while (true) {
-            const categories = await this.dbService.getAllXtreamCategories(
+            const categories = await this.dataSource.getAllCategories(
                 this.data.playlistId,
                 type
             );
@@ -182,10 +185,10 @@ export class CategoryManagementDialogComponent implements OnInit {
             const toShow = categories.filter((c) => c.selected).map((c) => c.id);
 
             if (toHide.length > 0) {
-                await this.dbService.updateCategoryVisibility(toHide, true);
+                await this.dataSource.updateCategoryVisibility(toHide, true);
             }
             if (toShow.length > 0) {
-                await this.dbService.updateCategoryVisibility(toShow, false);
+                await this.dataSource.updateCategoryVisibility(toShow, false);
             }
 
             this.dialogRef.close(true);

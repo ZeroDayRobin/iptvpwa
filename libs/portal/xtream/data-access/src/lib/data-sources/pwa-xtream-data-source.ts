@@ -32,7 +32,19 @@ const STORAGE_KEYS = {
     RECENT_ITEMS: 'xtream-recent-items',
     PLAYLISTS: 'xtream-playlists',
     PLAYBACK_POSITIONS: 'xtream-playback-positions',
+    HIDDEN_CATEGORIES: 'xtream-hidden-categories',
 };
+
+const dbToCategoryType: Record<DbCategoryType, CategoryType> = {
+    live: 'live',
+    movies: 'vod',
+    series: 'series',
+};
+
+interface CategoryShape {
+    readonly category_id?: string | number;
+    readonly category_name?: string;
+}
 
 interface XtreamCachedContentItem {
     readonly added?: string;
@@ -67,6 +79,13 @@ export class PwaXtreamDataSource implements IXtreamDataSource {
     // In-memory cache for the current session
     private categoryCache = new Map<string, XtreamCategory[]>();
     private contentCache = new Map<string, XtreamCachedContentItem[]>();
+
+    // updateCategoryVisibility() in IXtreamDataSource doesn't carry a
+    // playlistId — Electron uses globally unique DB primary keys, PWA has
+    // none. Track the playlist whose categories were last surfaced via
+    // getAllCategories() so the subsequent visibility write knows which
+    // localStorage bucket to update.
+    private lastQueriedPlaylistForVisibility: string | null = null;
 
     // =========================================================================
     // Playlist Operations (localStorage)
@@ -144,31 +163,59 @@ export class PwaXtreamDataSource implements IXtreamDataSource {
         const cacheKey = `${playlistId}-${type}-categories`;
 
         // Check in-memory cache first
-        const cachedCategories = this.categoryCache.get(cacheKey);
-        if (cachedCategories) {
-            return cachedCategories;
+        let cachedCategories = this.categoryCache.get(cacheKey);
+        if (!cachedCategories) {
+            cachedCategories = await this.apiService.getCategories(
+                credentials,
+                type
+            );
+            this.categoryCache.set(cacheKey, cachedCategories);
         }
 
-        // Fetch from API
-        const categories = await this.apiService.getCategories(
-            credentials,
-            type
+        // Apply user-managed visibility (Manage Categories dialog). The cache
+        // keeps the unfiltered upstream response so toggling visibility back
+        // on does not require another API call.
+        const hiddenIds = this.getHiddenCategoryIdSet(playlistId);
+        if (hiddenIds.size === 0) {
+            return cachedCategories;
+        }
+        return cachedCategories.filter(
+            (cat) => !hiddenIds.has(this.toXtreamId(cat as CategoryShape))
         );
-
-        // Cache in memory
-        this.categoryCache.set(cacheKey, categories);
-
-        return categories;
     }
 
     async getAllCategories(
         playlistId: string,
         type: DbCategoryType
     ): Promise<XtreamCategoryFromDb[]> {
-        void playlistId;
-        void type;
-        // PWA doesn't track hidden categories - return empty
-        return [];
+        // Track the playlist for the subsequent updateCategoryVisibility call.
+        // Manage Categories is modal, so the next visibility write is always
+        // for this playlist.
+        this.lastQueriedPlaylistForVisibility = playlistId;
+
+        const apiType = dbToCategoryType[type];
+        const cacheKey = `${playlistId}-${apiType}-categories`;
+        const cached = this.categoryCache.get(cacheKey) ?? [];
+        const hiddenIds = this.getHiddenCategoryIdSet(playlistId);
+
+        return cached.map((cat): XtreamCategoryFromDb => {
+            const xtreamId = this.toXtreamId(cat as CategoryShape);
+            const name =
+                ((cat as CategoryShape).category_name ?? '') ||
+                `Category ${xtreamId}`;
+            return {
+                // PWA has no separate DB primary key, so use xtream_id as the
+                // surrogate id. The dialog round-trips this id back into
+                // updateCategoryVisibility() unchanged, so any stable value
+                // works as long as it's per-category unique within a playlist.
+                id: xtreamId,
+                name,
+                playlist_id: playlistId,
+                type,
+                xtream_id: xtreamId,
+                hidden: hiddenIds.has(xtreamId),
+            };
+        });
     }
 
     async getCachedCategories(
@@ -194,10 +241,69 @@ export class PwaXtreamDataSource implements IXtreamDataSource {
         categoryIds: number[],
         hidden: boolean
     ): Promise<void> {
-        void categoryIds;
-        void hidden;
-        // Category visibility is not supported in PWA mode
-        this.logger.warn('Category visibility not supported in PWA mode');
+        const playlistId = this.lastQueriedPlaylistForVisibility;
+        if (!playlistId) {
+            this.logger.warn(
+                'updateCategoryVisibility called before getAllCategories — no playlist context, skipping'
+            );
+            return;
+        }
+
+        const all = this.getHiddenCategoriesFromStorage();
+        const current = new Set(all[playlistId] ?? []);
+        const ids = categoryIds.map((id) => Number(id)).filter((id) =>
+            Number.isFinite(id)
+        );
+
+        if (hidden) {
+            for (const id of ids) {
+                current.add(id);
+            }
+        } else {
+            for (const id of ids) {
+                current.delete(id);
+            }
+        }
+
+        if (current.size === 0) {
+            delete all[playlistId];
+        } else {
+            all[playlistId] = Array.from(current).sort((a, b) => a - b);
+        }
+        this.saveHiddenCategoriesToStorage(all);
+    }
+
+    // =========================================================================
+    // Hidden categories (localStorage)
+    // =========================================================================
+
+    private getHiddenCategoryIdSet(playlistId: string): Set<number> {
+        return new Set(this.getHiddenCategoriesFromStorage()[playlistId] ?? []);
+    }
+
+    private getHiddenCategoriesFromStorage(): Record<string, number[]> {
+        try {
+            const data = localStorage.getItem(STORAGE_KEYS.HIDDEN_CATEGORIES);
+            return data ? JSON.parse(data) : {};
+        } catch {
+            return {};
+        }
+    }
+
+    private saveHiddenCategoriesToStorage(
+        hidden: Record<string, number[]>
+    ): void {
+        localStorage.setItem(
+            STORAGE_KEYS.HIDDEN_CATEGORIES,
+            JSON.stringify(hidden)
+        );
+    }
+
+    private toXtreamId(cat: CategoryShape): number {
+        const raw = cat.category_id;
+        if (typeof raw === 'number') return raw;
+        const parsed = Number(raw);
+        return Number.isFinite(parsed) ? parsed : 0;
     }
 
     // =========================================================================
